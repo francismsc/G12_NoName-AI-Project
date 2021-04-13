@@ -1,0 +1,4 @@
+C:\Users\user\projeto_ia\my_thinker\NoName\obj\Debug\netstandard2.0\NoName.csprojAssemblyReference.cache
+C:\Users\user\projeto_ia\my_thinker\NoName\obj\Debug\netstandard2.0\NoName.AssemblyInfoInputs.cache
+C:\Users\user\projeto_ia\my_thinker\NoName\obj\Debug\netstandard2.0\NoName.AssemblyInfo.cs
+C:\Users\user\projeto_ia\my_thinker\NoName\obj\Debug\netstandard2.0\NoName.csproj.CoreCompileInputs.cache

@@ -1,0 +1,104 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "NoName/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "C:\\Users\\user\\Desktop\\color-shape-links-ai-competition\\ConsoleApp\\ColorShapeLinks\\Common\\Common.csproj": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NoName.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NoName.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NoName/1.0.0": {
+      "type": "project",
+      "path": "../NoName/NoName.csproj",
+      "msbuildProject": "../NoName/NoName.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "NoName >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\user\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\my_thinker\\TestNoName\\TestNoName.csproj",
+      "projectName": "TestNoName",
+      "projectPath": "C:\\Users\\user\\Desktop\\my_thinker\\TestNoName\\TestNoName.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\my_thinker\\TestNoName\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\user\\Desktop\\my_thinker\\NoName\\NoName.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\my_thinker\\NoName\\NoName.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\user\\Desktop\\color-shape-links-ai-competition\\ConsoleApp\\ColorShapeLinks\\Common\\Common.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\user\\Desktop\\color-shape-links-ai-competition\\ConsoleApp\\ColorShapeLinks\\Common\\Common.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}
