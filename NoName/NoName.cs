@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace ColorShapeLinks.Common.AI.Examples
+namespace NoName
 {
 
     public class NoName : AbstractThinker
