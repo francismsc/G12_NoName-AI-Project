@@ -3,7 +3,6 @@ using System.Threading;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
 using System.Collections.Generic;
-using UnityEngine;
 
 
 namespace NoName
@@ -36,7 +35,7 @@ namespace NoName
 
         public override string ToString()
         {
-            return base.ToString() + "NoName" + maxDepth;
+            return base.ToString() + "_v1_" + maxDepth;
         }
         public override FutureMove Think(Board board, CancellationToken ct)
         {
