@@ -16,7 +16,7 @@ namespace NoName
         private int maxDepth;
         private int numEvals;
 
-        public const int defaultMaxDepth = 3;
+        public const int defaultMaxDepth = 2;
         private System.Random random;
 
 
@@ -35,7 +35,7 @@ namespace NoName
 
         public override string ToString()
         {
-            return base.ToString() + "_v1_" + maxDepth;
+            return base.ToString() + "_v1";
         }
         public override FutureMove Think(Board board, CancellationToken ct)
         {
