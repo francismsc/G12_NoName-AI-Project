@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace NoName
 {
 
-    public class NoName : AbstractThinker
+    public class G12_NoName : AbstractThinker
     {
 
 
