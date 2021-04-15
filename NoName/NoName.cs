@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace NoName
 {
 
-    public class G12_NoName : AbstractThinker
+    public class NoName : AbstractThinker
     {
 
 
@@ -35,7 +35,7 @@ namespace NoName
 
         public override string ToString()
         {
-            return base.ToString() + "_v1";
+            return "G12" + base.ToString() + "_v1";
         }
         public override FutureMove Think(Board board, CancellationToken ct)
         {
