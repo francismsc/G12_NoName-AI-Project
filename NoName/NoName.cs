@@ -3,6 +3,7 @@ using System.Threading;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
 using System.Collections.Generic;
+using UnityEngine;
 
 
 namespace NoName
@@ -35,7 +36,7 @@ namespace NoName
 
         public override string ToString()
         {
-            return "G12" + base.ToString() + "_v2.1";
+            return "G12_" + base.ToString() + "_v2.2";
         }
         public override FutureMove Think(Board board, CancellationToken ct)
         {
@@ -173,11 +174,25 @@ namespace NoName
             // Loop through the board looking for pieces
             for (int i = 0; i < board.rows; i++)
             {
+                if (vinaRowS >= board.piecesInSequence)
+                {
+
+                    h += vinaRowS;
+
+                }
+                if (sVinaRowS >= board.piecesInSequence)
+                {
+                    h += sVinaRowS;
+
+
+                }
 
                 vinaRow = 0;
                 vinaRowS = 0;
                 sVinaRow = 0;
                 sVinaRowS = 0;
+
+                
 
                 for (int j = 0; j < board.cols; j++)
                 {
@@ -190,7 +205,7 @@ namespace NoName
                         //where it is in the board (more to the center = more points)
                         if (piece.Value.color == color)
                         {
-                            h += 1 / (0.01f + Dist(centerRow, centerCol, i, j)) * 20;
+                            h += 1 / (0.00001f + Dist(centerRow, centerCol, i, j)) *40;
 
 
                         }
@@ -199,7 +214,7 @@ namespace NoName
                         else
                         {
 
-                            h -= 1 / (0.01f + Dist(centerRow, centerCol, i, j)) * 20;
+                            h -= 1 / (0.00001f + Dist(centerRow, centerCol, i, j)) * 40;
 
                         }
                         //Give points to pieces that are of our Shape depending on
@@ -207,7 +222,7 @@ namespace NoName
 
                         if (piece.Value.shape == color.Shape())
                         {
-                            h += 1 / (0.01f + Dist(centerRow, centerCol, i, j)) * 20;
+                            h += 1 / (0.00001f + Dist(centerRow, centerCol, i, j)) * 40;
 
 
                         }
@@ -215,10 +230,12 @@ namespace NoName
                         // same criteria
                         else
                         {
-                            h -= 1 / (0.01f + Dist(centerRow, centerCol, i, j)) * 20;
+                            h -= 1 / (0.00001f + Dist(centerRow, centerCol, i, j)) * 40;
 
 
                         }
+
+
 
                         //Count amount of vertical pieces of our color in a row and 
                         //amount of spaces(including of our color) in a row and give it points per amount in a row
@@ -676,12 +693,7 @@ namespace NoName
                         }
                         else
                         {
-                            //Give it points if there is enough space to fill our needed sequence
-                            if (evinaRowS >= board.piecesInSequence)
-                            {
-                                h -= evinaRowS;
 
-                            }
                             evinaRow = 0;
                             evinaRowS = 0;
 
@@ -698,11 +710,7 @@ namespace NoName
                         else
                         {
                             //Give it points if there is enough space to fill our needed sequence
-                            if (esVinaRowS >= board.piecesInSequence)
-                            {
-                                h -= esVinaRowS;
 
-                            }
 
                             esVinaRow = 0;
                             esVinaRowS = 0;
@@ -752,18 +760,8 @@ namespace NoName
             //Same criteria but for horizontal pieces
             for (int i = 0; i < board.cols; i++)
             {
-                if (ehinaRowS >= board.piecesInSequence)
-                {
 
-                    h -= hinaRowS;
-
-                }
-                if (esHinaRowS >= board.piecesInSequence)
-                {
-                    h -= esHinaRowS;
-
-
-                }
+                
                 ehinaRow = 0;
                 ehinaRowS = 0;
                 esHinaRow = 0;
@@ -786,12 +784,7 @@ namespace NoName
                         }
                         else
                         {
-                            if (ehinaRowS >= board.piecesInSequence)
-                            {
 
-                                h -= ehinaRowS;
-
-                            }
 
                             ehinaRow = 0;
                             ehinaRowS = 0;
@@ -806,12 +799,7 @@ namespace NoName
                         }
                         else
                         {
-                            if (esHinaRowS >= board.piecesInSequence)
-                            {
-                                h -= esHinaRowS;
 
-
-                            }
                             esHinaRow = 0;
                             esHinaRowS = 0;
 
@@ -866,17 +854,7 @@ namespace NoName
             for (int k = 0; k < board.rows; k++)
             {
 
-                if (edinaRowS >= board.piecesInSequence)
-                {
-                    h -= dinaRowS;
 
-
-                }
-                if (esDinaRowS >= board.piecesInSequence)
-                {
-                    h += esDinaRowS;
-
-                }
                 edinaRow = 0;
                 edinaRowS = 0;
                 esDinaRow = 0;
@@ -900,12 +878,7 @@ namespace NoName
                         }
                         else
                         {
-                            if (edinaRowS >= board.piecesInSequence)
-                            {
-                                h -= edinaRowS;
 
-
-                            }
                             edinaRow = 0;
                             edinaRowS = 0;
                         }
@@ -918,11 +891,7 @@ namespace NoName
                         }
                         else
                         {
-                            if (esDinaRowS >= board.piecesInSequence)
-                            {
-                                h -= esDinaRowS;
-
-                            }
+  
                             esDinaRow = 0;
                             esDinaRowS = 0;
 
@@ -971,16 +940,6 @@ namespace NoName
             //Same criteria but for Diagonal pieces from up to down
             for (int k = board.rows - 1; k >= 0; k--)
             {
-                if (edinaRowS >= board.piecesInSequence)
-                {
-                    h -= d2inaRowS;
-
-                }
-                if (esDinaRowS >= board.piecesInSequence)
-                {
-                    h -= esD2inaRowS;
-
-                }
 
                 ed2inaRow = 0;
                 ed2inaRowS = 0;
@@ -1003,11 +962,6 @@ namespace NoName
 
                         else
                         {
-                            if (edinaRowS >= board.piecesInSequence)
-                            {
-                                h -= ed2inaRowS;
-
-                            }
                             ed2inaRow = 0;
                             ed2inaRowS = 0;
                         }
@@ -1020,11 +974,6 @@ namespace NoName
                         }
                         else
                         {
-                            if (esDinaRowS >= board.piecesInSequence)
-                            {
-                                h -= esD2inaRowS;
-
-                            }
 
 
                             esD2inaRow = 0;
@@ -1074,24 +1023,15 @@ namespace NoName
 
 
 
-            //Always leave 2 pieces of each shape for winning/losing scenarios
-            if (board.rows >= 9 || board.cols >= 9)
-            {
-                if (board.PieceCount(color, color.Shape()) <= 4)
+            //Makes it so the AI tries to leave some shaped pieces for more important moments
+ 
+                if (board.PieceCount(color, color.Shape()) <= (board.rows * board.cols / 18))
                 {
-                    h -= 100000;
+                    h -= 1000 * (board.rows * board.cols / 18 - board.PieceCount(color,color.Shape())) ;
                 }
-            }
-            else
-            {
-                if (board.PieceCount(color, color.Shape()) <= 3)
-                {
-                    h -= 100000;
-                }
-            }
+            
 
 
-            // Return the final heuristic score for the given board
 
             return h;
         }
