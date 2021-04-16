@@ -35,7 +35,7 @@ namespace NoName
 
         public override string ToString()
         {
-            return "G12" + base.ToString() + "_v2";
+            return "G12" + base.ToString() + "_v2.1";
         }
         public override FutureMove Think(Board board, CancellationToken ct)
         {
@@ -1075,9 +1075,19 @@ namespace NoName
 
 
             //Always leave 2 pieces of each shape for winning/losing scenarios
-            if (board.PieceCount(color, color.Shape()) <= 2)
+            if (board.rows >= 9 || board.cols >= 9)
             {
-                h -= 100000;
+                if (board.PieceCount(color, color.Shape()) <= 4)
+                {
+                    h -= 100000;
+                }
+            }
+            else
+            {
+                if (board.PieceCount(color, color.Shape()) <= 3)
+                {
+                    h -= 100000;
+                }
             }
 
 
