@@ -2,16 +2,16 @@
 ## Grupo 12 - NoName
 ### Autores
 - Carolina Bastos nº: 22001952
-		A Carolina realizou o relatório.
-		Pensou nas melhores heurísticas para aplicar na IA.
-		Ajudou no processo de escolha do algoritmo.
+  - A Carolina realizou o relatório.
+  - Pensou nas melhores heurísticas para aplicar na IA.
+  - Ajudou no processo de escolha do algoritmo.
 - Daniela Gameiro nº: 21901681
-		A Daniela realizou o relatório.
-		Pensou nas melhores heurísticas para aplicar na IA.
-		Ajudou no processo de escolha do algoritmo.
+  - A Daniela realizou o relatório.
+  - Pensou nas melhores heurísticas para aplicar na IA.
+  - Ajudou no processo de escolha do algoritmo.
 - Francisco Costa nº: 21903228
-		O Francisco programou a IA.
-		Pensou no melhor algoritmo e heurística para aplicar na IA.
+  - O Francisco programou a IA.
+  - Pensou no melhor algoritmo e heurística para aplicar na IA.
 -----------
 ### Algoritmo
 - Optamos por escolher o algoritmo Negamax com cortes Alfa-Beta.
@@ -24,10 +24,10 @@
 ### Heurísticas
 #### Primeira Heurística
 - 1 / (√(((X - Nl/2)^2) + (Y - Nc/2)^2)) + 0.00001) * 40
- - X = Linha do ponto observado no tabuleiro.
- - Y = Coluna do ponto observado no tabuleiro
- - Nl = Número de linhas do tabuleiro.
- - Nc = Número de colunas do tabuleiro.
+  - X = Linha do ponto observado no tabuleiro.
+  - Y = Coluna do ponto observado no tabuleiro
+  - Nl = Número de linhas do tabuleiro.
+  - Nc = Número de colunas do tabuleiro.
 
 - Esta fórmula atribui mais pontuação às peças quanto mais próximas do centro do tabuleiro estiverem.
 - O "+ 0.00001" é para evitar que o divisor seja igual a zero.
@@ -44,10 +44,11 @@
 #### Terceira Heurística
 - Guarda as duas últimas peças da mesma forma para jogadas decisivas (vitória ou derrota).
 - A IA guarda um certo número de peças, para jogadas decisivas, consoante o tamanho do tabuleiro.
- - Número de peças a guardar = Nl * Nc / 18
+- Número de peças a guardar = Nl * Nc / 18
 - Sempre que é jogada uma das peças guardadas, são retirados pontos. A quantidade de pontos retirados vai aumentado consoante a diferença entre o número de peças a guardar e o número de peças total no momento.
 ------------
 
 ### Referências
 - PowerPoints dados em aula.
 - TickTackToe por professor Nuno Fachada. 
+
